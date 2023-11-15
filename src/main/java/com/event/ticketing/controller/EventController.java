@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.event.ticketing.entity.Event;
+import com.event.ticketing.dto.EventDTO;
 import com.event.ticketing.service.EventService;
 
 @RestController
@@ -19,12 +19,12 @@ public class EventController {
     private EventService eventService;
 
     @GetMapping
-    public List<Event> getAllEvents() {
+    public List<EventDTO> getAllEvents() {
         return eventService.getAllEvents();
     }
 
     @GetMapping("/{id}")
-    public Event getEventById(@PathVariable Long id) {
+    public EventDTO getEventById(@PathVariable Long id) {
         return eventService.getEventById(id);
     }
 }
