@@ -1,0 +1,9 @@
+<div>
+    <h2>Book Ticket</h2>
+    <form (submit)="bookTicket(userId.value, eventId.value)">
+      <input type="number" placeholder="User ID" #userId required>
+      <input type="number" placeholder="Event ID" #eventId required>
+      <button type="submit">Book Ticket</button>
+    </form>
+  </div>
+  

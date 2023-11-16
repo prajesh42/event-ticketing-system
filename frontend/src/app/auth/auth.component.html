@@ -1,0 +1,18 @@
+<div>
+    <h2>Login</h2>
+    <form (submit)="login(username.value, password.value)">
+      <input type="text" placeholder="Username" #username required>
+      <input type="password" placeholder="Password" #password required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  <div>
+    <h2>Register</h2>
+    <form (submit)="register(username.value, password.value)">
+      <input type="text" placeholder="Username" #username required>
+      <input type="password" placeholder="Password" #password required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  
