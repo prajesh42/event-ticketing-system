@@ -6,4 +6,5 @@ import com.event.ticketing.entity.Ticket;
 
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 	List<Ticket> findByUserId(Long userId);
+	Ticket getByUserIdAndEventId(Long userId, Long eventId);
 }

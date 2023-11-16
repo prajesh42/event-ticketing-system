@@ -1,9 +1,10 @@
 package com.event.ticketing.service;
 
 import java.util.List;
-import com.event.ticketing.entity.Ticket;
+
+import com.event.ticketing.dto.TicketDTO;
 
 public interface TicketService {
-    Ticket bookTicket(Long userId, Long eventId);
-    List<Ticket> getUserTickets(Long userId);
+    TicketDTO bookTicket(Long userId, Long eventId);
+    List<TicketDTO> getUserTickets(Long userId);
 }

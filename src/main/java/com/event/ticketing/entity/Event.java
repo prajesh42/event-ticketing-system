@@ -24,7 +24,12 @@ public class Event {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private LocalDate date;
+	private String description;
+	private String location;
+	private LocalDate eventStartDate;
+	private LocalDate eventEndDate;
+	private Integer noOfSeats;
+	private LocalDate creationDate;
 
 	@OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
 	private List<Ticket> tickets;

@@ -1,5 +1,6 @@
 package com.event.ticketing.entity;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -24,6 +25,9 @@ public class User {
     private Long id;
     private String username;
     private String password;
+    private Boolean isActive;
+    private String userType;
+    private LocalDate creationDate;
     
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Ticket> tickets;

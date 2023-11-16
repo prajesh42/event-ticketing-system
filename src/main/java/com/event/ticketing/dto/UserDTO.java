@@ -8,18 +8,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventDTO {
+public class UserDTO {
     private Long id;
-    private String name;
-    private String description;
-	private String location;
-	private LocalDate eventStartDate;
-	private LocalDate eventEndDate;
-	private Integer noOfSeats;
-	private LocalDate creationDate;
+    private String username;
+    private String password;
+    private Boolean isActive;
+    private String userType;
+    private LocalDate creationDate;
     private List<TicketDTO> tickets;
 }
