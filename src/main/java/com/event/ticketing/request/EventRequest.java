@@ -1,7 +1,6 @@
-package com.event.ticketing.dto;
+package com.event.ticketing.request;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventDTO {
+public class EventRequest {
     private Long id;
     private String name;
     private String description;
@@ -20,7 +19,4 @@ public class EventDTO {
 	private LocalDate eventStartDate;
 	private LocalDate eventEndDate;
 	private Integer noOfSeats;
-	private LocalDate creationDate;
-	private LocalDate updatedOn;
-    private List<TicketDTO> tickets;
 }

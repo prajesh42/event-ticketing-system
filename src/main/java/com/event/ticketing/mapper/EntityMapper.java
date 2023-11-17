@@ -13,11 +13,13 @@ import com.event.ticketing.entity.PaymentOption;
 import com.event.ticketing.entity.Ticket;
 import com.event.ticketing.entity.TicketDesign;
 import com.event.ticketing.entity.User;
+import com.event.ticketing.request.EventRequest;
 
 @Component
 @Mapper(componentModel = "spring")
 public interface EntityMapper {
     EventDTO eventToEventDTO(Event event);
+    Event eventRequestToEvent(EventRequest eventRequest);
     TicketDTO ticketToTicketDTO(Ticket ticket);
     UserDTO userToUserDTO(User user);
     PaymentOptionDTO paymentOptionToPaymentOptionDTO(PaymentOption paymentOption);

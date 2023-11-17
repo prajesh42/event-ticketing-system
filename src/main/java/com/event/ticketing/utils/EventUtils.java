@@ -1,6 +1,12 @@
 package com.event.ticketing.utils;
 
+import java.beans.PropertyDescriptor;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanWrapper;
+import org.springframework.beans.BeanWrapperImpl;
 
 public class EventUtils {
 
@@ -18,5 +24,20 @@ public class EventUtils {
         }
 
         return code.toString();
+    }
+    
+    public static String[] getNullPropertyNames(Object source) {
+        BeanWrapper beanWrapper = new BeanWrapperImpl(source);
+        PropertyDescriptor[] propertyDescriptors = beanWrapper.getPropertyDescriptors();
+
+        List<String> nullProperties = new ArrayList<>();
+        for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
+            String propertyName = propertyDescriptor.getName();
+            if (beanWrapper.getPropertyValue(propertyName) == null) {
+                nullProperties.add(propertyName);
+            }
+        }
+
+        return nullProperties.toArray(new String[0]);
     }
 }
