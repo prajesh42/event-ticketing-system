@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.event.ticketing.exception.EventDataException;
+import com.event.ticketing.exception.EventNotFoundException;
+import com.event.ticketing.exception.EventServiceException;
 import com.event.ticketing.request.EventRequest;
 import com.event.ticketing.service.EventService;
 
@@ -28,17 +31,17 @@ public class EventController {
 	private EventService eventService;
 
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getAllEvents() {
+	public ResponseEntity<?> getAllEvents() throws EventDataException, EventServiceException {
 		return ResponseEntity.ok(eventService.getAllEvents());
 	}
 
 	@GetMapping(path="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> getEventById(@PathVariable Long id) {
+	public ResponseEntity<?> getEventById(@PathVariable Long id) throws EventNotFoundException, EventDataException, EventServiceException {
 		return ResponseEntity.ok(eventService.getEventById(id));
 	}
 
 	@PostMapping(path="/create",consumes=MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> createEvent(@RequestBody EventRequest eventRequest) {
+	public ResponseEntity<?> createEvent(@RequestBody EventRequest eventRequest) throws EventDataException, EventServiceException {
 		Long eventId=eventService.creatEvent(eventRequest);
 		String uri = ServletUriComponentsBuilder
 				.fromCurrentContextPath()
@@ -49,12 +52,12 @@ public class EventController {
 	}
 
 	@PutMapping(path="/{id}",consumes=MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> updateEvent(@PathVariable Long id, @RequestBody EventRequest eventRequest) {
+	public ResponseEntity<?> updateEvent(@PathVariable Long id, @RequestBody EventRequest eventRequest) throws EventNotFoundException, EventDataException, EventServiceException {
 		return ResponseEntity.ok(eventService.updateEvent(id,eventRequest));
 	}
 
 	@DeleteMapping(path="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<?> deleteEvent(@PathVariable Long id){
+	public ResponseEntity<?> deleteEvent(@PathVariable Long id) throws EventNotFoundException, EventDataException, EventServiceException{
 		eventService.deleteEventById(id);
 		return ResponseEntity.ok("Deleted");	
 	}
