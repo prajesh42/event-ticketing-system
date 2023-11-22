@@ -1,36 +1,6 @@
-/* app.component.scss */
-.app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    flex: 1;
-    padding: 20px;
-  }
-  
+#search-addon{
+  border-color: #dee2e6;
+  border-left: none;
+  position: relative;
+  right: 2px;
+}
