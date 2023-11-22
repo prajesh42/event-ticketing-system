@@ -1,6 +1,6 @@
 package com.event.ticketing.service.impl;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,7 +51,7 @@ public class TicketServiceImpl implements TicketService {
 		ticket.setTicketCode(EventUtils.generateTicketCode());
 		ticket.setTicketPrice(1500);
 		ticket.setTicketStatus("Booked");
-		ticket.setCreationDate(LocalDate.now());
+		ticket.setCreationDate(new Date());
 		ticket.setUser(user);
 		ticket.setEvent(event);
 		Ticket savedTicket = ticketRepository.save(ticket);// TO-DO handle db exceptions

@@ -1,6 +1,6 @@
 package com.event.ticketing.entity;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +25,7 @@ public class Ticket {
 	private String ticketCode;
 	private String ticketStatus;
 	private Integer ticketPrice;
-	private LocalDate creationDate;
+	private Date creationDate;
 
 	@ManyToOne
 	@JoinColumn(name = "event_id")

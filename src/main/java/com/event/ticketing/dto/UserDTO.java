@@ -1,6 +1,6 @@
 package com.event.ticketing.dto;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -18,6 +18,6 @@ public class UserDTO {
     private String password;
     private Boolean isActive;
     private String userType;
-    private LocalDate creationDate;
+    private Date creationDate;
     private List<TicketDTO> tickets;
 }
