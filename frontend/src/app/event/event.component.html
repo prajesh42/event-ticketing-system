@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-12">
+        <div class="container mt-5">
+            <div class="row  text-center">
+              <div class="col-12 text-center">
+                <h1>{{ event.name }}</h1>
+              </div>
+              <div class="col-12 mt-3 text-center">
+                <p>{{ event.description }}</p>
+              </div>
+              <div class="col-12 col-md-4 mt-3">
+                <p>Date: <span id="eventDate">{{ event.eventStartDate | date:'dd MMM yyyy'}}</span></p>
+              </div>
+              <div class="col-12 col-md-4 mt-3">
+                <p>Location: <span id="eventLocation">{{ event.location }}</span></p>
+              </div>
+              <div class="col-12 col-md-4 mt-3">
+                <p>Tickets: <span id="numTickets">{{ event.noOfSeats }}</span></p>
+              </div>
+              <div class="col-12 mt-4 text-center">
+                <button class="btn btn-primary btn-lg">Book Tickets</button>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
