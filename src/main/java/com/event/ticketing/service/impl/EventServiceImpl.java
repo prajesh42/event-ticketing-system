@@ -65,7 +65,7 @@ public class EventServiceImpl implements EventService {
 		try {
 			return eventRepository.save(eventMapper.eventRequestToEvent(eventRequest)).getId();
 		}catch(DataAccessException | DataException e) {
-			throw new EventDataException("Error occurred while retrieving data", e);
+			throw new EventDataException("Error occurred while creating event", e);
 		}catch(Exception e) {
 			throw new EventServiceException("Something went wrong", e);
 		}
@@ -82,7 +82,7 @@ public class EventServiceImpl implements EventService {
 		}catch(EntityNotFoundException e) {
 			throw new EventNotFoundException("Data Not Found", e);
 		}catch(DataAccessException | DataException e) {
-			throw new EventDataException("Error occurred while retrieving data", e);
+			throw new EventDataException("Error occurred while updating data", e);
 		}catch(Exception e) {
 			throw new EventServiceException("Something went wrong", e);
 		}
@@ -95,7 +95,7 @@ public class EventServiceImpl implements EventService {
 		}catch(EntityNotFoundException e) {
 			throw new EventNotFoundException("Data Not Found", e);
 		}catch(DataAccessException | DataException e) {
-			throw new EventDataException("Error occurred while retrieving data", e);
+			throw new EventDataException("Error occurred while deleting data", e);
 		}catch(Exception e) {
 			throw new EventServiceException("Something went wrong", e);
 		}

@@ -13,6 +13,10 @@ public class EventUtils {
 	private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static final int CODE_LENGTH = 8;
 
+    /**
+     * generates random ticket code
+     * @return String
+     */
     public static String generateTicketCode() {
         SecureRandom random = new SecureRandom();
         StringBuilder code = new StringBuilder();
@@ -26,6 +30,11 @@ public class EventUtils {
         return code.toString();
     }
     
+    /**
+     * checks null value for attributes and return list of found attributes
+     * @param source
+     * @return String[]
+     */
     public static String[] getNullPropertyNames(Object source) {
         BeanWrapper beanWrapper = new BeanWrapperImpl(source);
         PropertyDescriptor[] propertyDescriptors = beanWrapper.getPropertyDescriptors();
