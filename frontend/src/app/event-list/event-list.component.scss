@@ -38,10 +38,6 @@
   .event-card:hover{
     transform: scale(1.05);
     box-shadow: 4px -2px 8px rgba(0, 0, 0, 0.6);
-    .event-card-content{
-       opacity: 100;
-      transform: translateY(-300px);
-    }
   }
 
   .event-card img {
@@ -54,13 +50,12 @@
 
   .event-card-content {
     position: relative;
+    bottom: 300px;
     color: #ffffff;
     padding: 10px;
     cursor: pointer;
     background-image: linear-gradient(to bottom,#000000e7, #00000048, #000000);
     height: 300px;
-    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
-    opacity: 0;
   }
 
   .book-now-button {
