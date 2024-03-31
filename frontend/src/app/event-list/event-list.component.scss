@@ -26,40 +26,41 @@
   .event-card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     width: 300px;
+    height: 300px;
     margin: 10px;
     transition: transform 0.2s ease-in-out;
     text-align: center;
+    float:left;
   }
 
-  .event-card:hover {
+  .event-card:hover{
     transform: scale(1.05);
-    box-shadow: 4px -5px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px -2px 8px rgba(0, 0, 0, 0.6);
+    .event-card-content{
+       opacity: 100;
+      transform: translateY(-300px);
+    }
   }
 
   .event-card img {
+    position: inherit;
     width: 100%;
-    height: 100px;
+    height: 100%;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
   }
 
   .event-card-content {
+    position: relative;
+    color: #ffffff;
     padding: 10px;
     cursor: pointer;
-  }
-
-  .event-card h3 {
-    margin-top: 0;
-    color: #333;
-    font-size: 16px;
-  }
-
-  .event-card p {
-    color: #666;
-    font-size: 14px;
+    background-image: linear-gradient(to bottom,#000000e7, #00000048, #000000);
+    height: 300px;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
   }
 
   .book-now-button {
@@ -71,15 +72,37 @@
     cursor: pointer;
   }
 
+  .event-header{
+    font-size: 16px;
+    font-weight: bold;
+  }
+
   .event-info {
-    height: 40px; /* Set a fixed height for event info paragraphs */
-    overflow: hidden; /* Hide any overflow content */
-    margin-bottom: 5px; /* Add some bottom margin for spacing */
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .event-info i{
+    margin:3px;
   }
   
   .event-description {
-    height: 60px; /* Set height to be twice the height of event info paragraphs */
-    overflow: hidden; /* Hide any overflow content */
-    margin-bottom: 10px; /* Add a bit more bottom margin for spacing */
+    height: 80px;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  .category-header{
+    margin: 10px;
+    font-size: 5vh;
+    font-weight: bold;
+    color: rgb(255, 165, 31);
+    text-shadow: -1px 4px 2px rgba(255, 165, 31,0.3) 
+  }
+
+  .clear{
+    clear:both;
   }
   
