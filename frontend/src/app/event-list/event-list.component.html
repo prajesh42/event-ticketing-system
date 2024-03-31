@@ -1,13 +1,17 @@
 <div class="event-card-container">
   <div class="event-row">  
-    <div class='col-12'>  
+    <div class='col-12'>
+      <div class="event-banner">
+        <div class="event-banner-content">
+          <ngx-typed-js [strings]="typedTexts" [backDelay]="50" [loop]="true" [typeSpeed]="20">
+            <span class="typing"></span>
+          </ngx-typed-js> 
+        </div>
+      </div>
       <ngb-carousel>
         <ng-template ngFor let-slide [ngForOf]="slides">
           <ng-template ngbSlide>
             <img [src]="slide.imageSrc" [alt]="slide.alt" class="event-image">
-            <div class="carousel-caption">
-              <h3 style="color: rgb(255, 165, 31)">{{ slide.alt }}</h3>
-            </div>
           </ng-template>
         </ng-template>
       </ngb-carousel>

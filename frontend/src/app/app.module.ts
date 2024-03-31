@@ -12,6 +12,7 @@ import { EventComponent } from './event/event.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CustomDatePipe } from './pipe/CustomDatePipe';
 import { DatePipe } from '@angular/common';
+import { NgxTypedJsModule } from 'ngx-typed-js';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxTypedJsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

@@ -13,6 +13,7 @@ export class EventListComponent implements OnInit {
   imageFilenames = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg'];
   imageFolderPath = '../../assets/image/';
   slides:any[]=[];
+  typedTexts:any[]=[];
 
   constructor(private eventService: EventService, private route: Router, private config: NgbCarouselConfig) {
     config.interval = 5000;  
@@ -20,6 +21,7 @@ export class EventListComponent implements OnInit {
     config.keyboard = false;  
     config.pauseOnHover = false; 
     this.slides=this.getSlides();
+    this.typedTexts=this.getTypedTexts();
   }
 
   ngOnInit(): void {
@@ -37,5 +39,14 @@ export class EventListComponent implements OnInit {
       imageSrc: this.imageFolderPath + filename,
       alt: 'Sample image ' + (this.imageFilenames.indexOf(filename) + 1)
     }));
+  }
+
+  getTypedTexts(){
+    return ['Where creativity meets coordination – your event, our expertise.',
+    'From concept to celebration, we\'re with you every step of the way.',
+    'Turning dreams into events, and events into unforgettable memories.',
+    'Crafting moments that last a lifetime welcome to the art of event planning.',
+    'Events tailored to perfection because every detail matters.'
+  ];
   }
 }
