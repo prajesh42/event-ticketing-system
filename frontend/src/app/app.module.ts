@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EventComponent } from './event/event.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CustomDatePipe } from './pipe/CustomDatePipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AuthComponent,
     EventListComponent,
     TicketBookingComponent,
-    EventComponent
+    EventComponent,
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
