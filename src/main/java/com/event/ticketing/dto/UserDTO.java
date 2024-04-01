@@ -13,11 +13,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-    private Long id;
+	private Long id;
     private String username;
-    private String password;
+    private String email;
+    private String roles;
+    private Boolean isLocked;
     private Boolean isActive;
-    private String userType;
     private Date creationDate;
+    private Date updatedOn;
     private List<TicketDTO> tickets;
 }
