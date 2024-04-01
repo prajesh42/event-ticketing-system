@@ -3,7 +3,7 @@
     <div class='col-12'>
       <div class="event-banner">
         <div class="event-banner-content">
-          <ngx-typed-js [strings]="typedTexts" [backDelay]="50" [loop]="true" [typeSpeed]="20">
+          <ngx-typed-js [strings]="typedTexts" [cursorColor]="'#ffa51f'" [backDelay]="50" [loop]="true" [smartBackspace]="true" [typeSpeed]="45">
             <span class="typing"></span>
           </ngx-typed-js> 
         </div>
@@ -26,7 +26,7 @@
         <p class="event-description">{{ event.description }}</p>
         <p class="event-info" [innerHTML]="event.eventStartDate | customDate:'MMM yyyy'"></p>
         <p class="event-info"><i class="fas fa-map-marker-alt"></i>{{ event.location }}</p>
-        <p class="event-info" style="color: rgb(255 165 31); font-weight: bold;">Tickets Available: {{ event.noOfSeats }}</p>
+        <p class="event-info" style="color: #ffa51f; font-weight: bold;">Tickets Available: {{ event.noOfSeats }}</p>
       </div>
     </div>
   </div>
