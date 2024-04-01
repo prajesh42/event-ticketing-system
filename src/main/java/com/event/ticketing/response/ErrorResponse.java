@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class EventErrorResponse {
+public class ErrorResponse {
 
 	private LocalDateTime timestamp;
 	private String path;
