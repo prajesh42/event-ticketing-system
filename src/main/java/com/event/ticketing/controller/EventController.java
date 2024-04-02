@@ -5,7 +5,16 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.event.ticketing.exception.EventDataException;
@@ -41,6 +50,7 @@ public class EventController {
 		return ResponseEntity.ok(eventService.getEventById(id));
 	}
 
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@Operation(summary = "Create an event", description = "Create a new event with the provided details.")
 	@ApiResponse(responseCode = "201", description = "Event created successfully", content = {
 			@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResponseEntity.class)) })
@@ -54,6 +64,7 @@ public class EventController {
 		return ResponseEntity.created(URI.create(uri)).build();
 	}
 
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@Operation(summary = "Update an event", description = "Update an existing event with the provided details.")
 	@PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> updateEvent(@Parameter(description = "Event ID", example = "1") @PathVariable Long id,
@@ -62,6 +73,7 @@ public class EventController {
 		return ResponseEntity.ok(eventService.updateEvent(id, eventRequest));
 	}
 
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@Operation(summary = "Delete an event", description = "Delete an existing event by specifying the event ID.")
 	@DeleteMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> deleteEvent(@Parameter(description = "Event ID", example = "1") @PathVariable Long id)
