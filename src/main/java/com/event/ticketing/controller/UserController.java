@@ -5,6 +5,7 @@ import java.net.URI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,6 +42,7 @@ public class UserController {
 		return ResponseEntity.ok(userService.getUserByUsername(username));
 	}
 
+	@PreAuthorize("hasAuthority('ADMIN')")
 	@Operation(summary = "Create a User", description = "Create a new user with the provided details.")
 	@ApiResponse(responseCode = "201", description = "User created successfully", content = {
 			@Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ResponseEntity.class)) })
