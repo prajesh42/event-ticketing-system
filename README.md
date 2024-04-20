@@ -16,6 +16,36 @@ The Event Ticketing System is a Java-based application developed using Java 17 a
 
 5. **Page Management:** Administrators have the ability to manage page content dynamically. They can control what information is displayed on various pages of the system, providing flexibility and customization options.
 
+### Swagger Implementation
+
+In addition to its core features, the Event Ticketing System also integrates Swagger for API documentation and testing. Swagger provides a user-friendly interface for exploring the application's RESTful APIs, making it easier for developers to understand and interact with the system.
+
+#### Key Points:
+
+- **Swagger UI Integration:** The application incorporates Swagger UI, a web-based interface that dynamically generates documentation for the RESTful APIs. Users can access the Swagger UI to view details about each API endpoint, including its parameters, responses, and usage examples.
+
+- **API Documentation:** Swagger automatically generates comprehensive documentation for all the API endpoints exposed by the Event Ticketing System. This documentation includes information about request and response formats, HTTP methods, authentication requirements, and more.
+
+- **Interactive API Testing:** With Swagger, developers can interactively test the API endpoints directly from the Swagger UI. This allows for real-time experimentation with different request payloads and parameters, facilitating the development and debugging process.
+
+#### How to Access Swagger:
+
+To access the Swagger documentation and testing interface:
+
+1. Start the Event Ticketing System application locally as described in the "How to Run" section.
+
+2. Once the application is running, navigate to the Swagger UI endpoint in your web browser. Typically, this endpoint is located at `http://localhost:8080/swagger-ui.html`.
+
+3. You will be presented with the Swagger UI interface, where you can explore the available API endpoints, view their documentation, and perform test requests.
+
+#### Benefits of Swagger Integration:
+
+- **Improved Developer Experience:** Swagger enhances the developer experience by providing clear and concise documentation for the API endpoints. Developers can quickly understand how to interact with the system's APIs without the need for extensive manual documentation.
+
+- **API Consistency:** By automatically generating documentation from the codebase, Swagger helps ensure consistency between the implemented APIs and their documented specifications. This reduces the risk of discrepancies and misunderstandings during development.
+
+- **Facilitates Collaboration:** Swagger serves as a central hub for API documentation and testing, making it easier for teams to collaborate on API-related tasks. Developers, testers, and other stakeholders can access and interact with the APIs in a unified environment.
+
 ## How to Run
 
 To run the Event Ticketing System locally, follow these steps:
