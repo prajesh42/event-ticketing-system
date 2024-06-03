@@ -9,6 +9,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class EventComponent implements OnInit {
   event:any;
+  image:any;
+  imageFolderPath = '../../assets/image/';
 
   constructor(private eventService: EventService, private activatedRoute: ActivatedRoute){
   }
@@ -23,6 +25,7 @@ export class EventComponent implements OnInit {
         }
       }
     )
+    this.image=this.imageFolderPath+"image1.jpg";
   }
 
   getEventById(id:number){

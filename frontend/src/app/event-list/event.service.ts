@@ -12,8 +12,7 @@ export class EventService {
     // Create headers with basic authorization
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-cache',
-      'Authorization': 'Basic ' + btoa("eventuser" + ':' + "testuser")
+      'Cache-Control': 'no-cache'
     });
 
     // Include headers in the HTTP request
@@ -24,8 +23,7 @@ export class EventService {
     // Create headers with basic authorization
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Cache-Control': 'no-cache',
-      'Authorization': 'Basic ' + btoa("eventuser" + ':' + "testuser")
+      'Cache-Control': 'no-cache'
     });
 
     // Include headers in the HTTP request

@@ -1,26 +1,41 @@
-<div class="row">
-    <div class="col-12">
-        <div class="container mt-5">
-            <div class="row  text-center">
-              <div class="col-12 text-center">
-                <h1>{{ event.name }}</h1>
-              </div>
-              <div class="col-12 mt-3 text-center">
-                <p>{{ event.description }}</p>
-              </div>
-              <div class="col-12 col-md-4 mt-3">
-                <p>Date: <span id="eventDate">{{ event.eventStartDate | date:'dd MMM yyyy'}}</span></p>
-              </div>
-              <div class="col-12 col-md-4 mt-3">
-                <p>Location: <span id="eventLocation">{{ event.location }}</span></p>
-              </div>
-              <div class="col-12 col-md-4 mt-3">
-                <p>Tickets: <span id="numTickets">{{ event.noOfSeats }}</span></p>
-              </div>
-              <div class="col-12 mt-4 text-center">
-                <button class="btn btn-primary btn-lg">Book Tickets</button>
-              </div>
-            </div>
+<div class="event-desc" [ngStyle]="{'background-image': 'url(' + '' + ')'}">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="text-center">
+          <div class="event-card-content">
+            <p class="event-header">{{ event.name }}</p>
+            <p class="event-description">{{ event.description }}</p>
+            <p class="event-info" [innerHTML]="event.eventStartDate | customDate:'MMM yyyy'"></p>
+            <p class="event-info"><i class="fas fa-map-marker-alt"></i>{{ event.location }}</p>
+            <p class="event-info" style="color: #ffa51f; font-weight: bold;">Tickets Available: {{ event.noOfSeats }}</p>
           </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 offset-md-2">
+        <div class="event-booking booking-form p-4 border rounded">
+          <h2 class="text-center mb-4">Book Tickets</h2>
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" name="user.name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="user.email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="tickets">Number of Tickets</label>
+              <input type="number" class="form-control" id="tickets" name="noOfTickets" placeholder="Enter number of tickets">
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <button type="submit" class="btn btn-block mt-4" style="background-color: #ffa51f; color:#ffffff">Book Now</button>
+              <span class="ml-3"><strong>Price:</strong> Rs.2000</span>
+              <span class="ml-3"><strong>Total:</strong> Rs.0</span>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

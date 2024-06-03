@@ -1,0 +1,40 @@
+.event-desc{
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.event-card-content {
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,#000000e7, #000000e7, #ffffff);
+    height: 450px;
+    border-radius: 10px;
+  }
+
+  .event-header{
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .event-info {
+    height: 40px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .event-info i{
+    margin:3px;
+  }
+  
+  .event-description {
+    height: 80px;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  .event-booking {
+    box-shadow: 0px 18px 50px rgba(0, 0, 0, 0.2);
+  }

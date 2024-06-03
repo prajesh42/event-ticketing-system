@@ -1,18 +1,49 @@
-<div>
-    <h2>Login</h2>
-    <form (submit)="login(username.value, password.value)">
-      <input type="text" placeholder="Username" #username required>
-      <input type="password" placeholder="Password" #password required>
-      <button type="submit">Login</button>
-    </form>
-  </div>
+ <!-- Login -->
+<div *ngIf="isLogin" class="login-container col-12 offset-md-4">
+  <h2 class="text-center">Login</h2>
+  <form (ngSubmit)="onSubmitLogin()">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-3">Login</button>
+    <div class="text-center mt-3">
+      <a href="#">Forgot password?</a>
+    </div>
+    <div class="text-center mt-2">
+      <span>Don't have an account? <p class="event-link" (click)="toggleView()">Sign up</p></span>
+    </div>
+  </form>
+</div>
   
-  <div>
-    <h2>Register</h2>
-    <form (submit)="register(username.value, password.value)">
-      <input type="text" placeholder="Username" #username required>
-      <input type="password" placeholder="Password" #password required>
-      <button type="submit">Register</button>
-    </form>
-  </div>
+<!-- Sign Up -->
+<div *ngIf="!isLogin" class="signup-container col-12 offset-md-4">
+  <h2 class="text-center">Sign Up</h2>
+  <form (ngSubmit)="onSubmitSignUp()">
+    <div class="form-group mb-3">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username">
+    </div>
+    <div class="form-group mb-3">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+    <div class="form-group mb-3">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="form-group mb-3">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mt-3">Sign Up</button>
+    <div class="text-center mt-3">
+      <span>Already have an account? <p class="event-link" (click)="toggleView()">Login</p></span>
+    </div>
+  </form>
+</div>
   
